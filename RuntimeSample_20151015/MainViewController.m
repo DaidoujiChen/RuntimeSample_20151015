@@ -11,8 +11,23 @@
 
 @implementation MainViewController
 
+static const char *key = "myKey";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setMyString:@"myString"];
+    NSLog(@"%@", [self myString]);
+    objc_removeAssociatedObjects(self);
+    NSLog(@"%@", [self myString]);
+}
+
+- (void)setMyString:(NSString *)myString {
+    objc_setAssociatedObject(self, &key, myString, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSString *)myString {
+    return objc_getAssociatedObject(self, &key);
 }
 
 @end
