@@ -13,6 +13,7 @@
 		01D3C3B61BC8DDDE0052982A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D3C3B41BC8DDDE0052982A /* LaunchScreen.storyboard */; };
 		01D3C3C01BC8DE550052982A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D3C3BE1BC8DE550052982A /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		01D3C3C11BC8DE550052982A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D3C3BF1BC8DE550052982A /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		01DE8CBE1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE8CBD1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		01D3C3BD1BC8DE550052982A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		01D3C3BE1BC8DE550052982A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		01D3C3BF1BC8DE550052982A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		01DE8CBC1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DaiDeallocDetect.h"; sourceTree = "<group>"; };
+		01DE8CBD1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DaiDeallocDetect.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		01D3C3A51BC8DDDE0052982A /* RuntimeSample_20151015 */ = {
 			isa = PBXGroup;
 			children = (
+				01DE8CBB1BCA317F00D68FA4 /* DaiDeallocDetect */,
 				01D3C3A91BC8DDDE0052982A /* AppDelegate.h */,
 				01D3C3AA1BC8DDDE0052982A /* AppDelegate.m */,
 				01D3C3BD1BC8DE550052982A /* MainViewController.h */,
@@ -77,6 +81,15 @@
 				01D3C3A71BC8DDDE0052982A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01DE8CBB1BCA317F00D68FA4 /* DaiDeallocDetect */ = {
+			isa = PBXGroup;
+			children = (
+				01DE8CBC1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.h */,
+				01DE8CBD1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.m */,
+			);
+			path = DaiDeallocDetect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01DE8CBE1BCA31B900D68FA4 /* NSObject+DaiDeallocDetect.m in Sources */,
 				01D3C3AB1BC8DDDE0052982A /* AppDelegate.m in Sources */,
 				01D3C3C01BC8DE550052982A /* MainViewController.m in Sources */,
 				01D3C3A81BC8DDDE0052982A /* main.m in Sources */,
@@ -293,6 +307,7 @@
 				01D3C3BC1BC8DDDE0052982A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

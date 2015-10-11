@@ -7,12 +7,29 @@
 //
 
 #import "MainViewController.h"
-#import <objc/runtime.h>
+#import "NSObject+DaiDeallocDetect.h"
 
 @implementation MainViewController
 
+#pragma mark - ibaction
+
+- (IBAction)pushAction:(id)sender {
+    [self.navigationController pushViewController:[MainViewController new] animated:YES];
+}
+
+#pragma mark - life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = [NSString stringWithFormat:@"- Level : %td -", self.navigationController.viewControllers.count];
+    
+    [self onDealloc: ^() {
+        NSLog(@"viewDidLoad: -> dealloc");
+    }];
+}
+
+- (void)dealloc {
+    NSLog(@"controller -> dealloc : %@", self);
 }
 
 @end

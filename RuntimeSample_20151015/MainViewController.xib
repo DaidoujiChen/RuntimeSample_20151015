@@ -13,8 +13,27 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nj-IP-k29">
+                    <rect key="frame" x="277" y="285" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="Dn2-Of-vGs"/>
+                        <constraint firstAttribute="height" constant="30" id="jnU-cR-dEA"/>
+                    </constraints>
+                    <state key="normal" title="Push"/>
+                    <connections>
+                        <action selector="pushAction:" destination="-1" eventType="touchUpInside" id="lGW-6B-iKa"/>
+                    </connections>
+                </button>
+            </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2nj-IP-k29" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YEB-Td-hdO"/>
+                <constraint firstItem="2nj-IP-k29" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="feX-d3-Mob"/>
+            </constraints>
+            <point key="canvasLocation" x="554" y="477"/>
         </view>
     </objects>
 </document>
