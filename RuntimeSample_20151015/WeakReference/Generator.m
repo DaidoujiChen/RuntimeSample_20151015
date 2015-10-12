@@ -9,6 +9,16 @@
 #import "Generator.h"
 #import <objc/runtime.h>
 
+@interface WeakContainer : NSObject
+
+@property (nonatomic, weak) id object;
+
+@end
+
+@implementation WeakContainer
+
+@end
+
 @implementation Generator
 
 #pragma mark - private class method
@@ -49,11 +59,14 @@
 }
 
 + (void)setDelegate:(id <GeneratorDelegate>)delegate {
-    objc_setAssociatedObject(self, @selector(delegate), delegate, OBJC_ASSOCIATION_ASSIGN);
+    WeakContainer *weakContainer = [WeakContainer new];
+    weakContainer.object = delegate;
+    objc_setAssociatedObject(self, @selector(delegate), weakContainer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 + (id <GeneratorDelegate>)delegate {
-    return objc_getAssociatedObject(self, _cmd);
+    WeakContainer *weakContainer = objc_getAssociatedObject(self, _cmd);
+    return weakContainer.object;
 }
 
 @end
